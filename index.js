@@ -41,7 +41,7 @@ app.use(function(req,res,next){
 app.use("/static", express.static(path.join(__dirname, "public")));
 
 app.use("/", adminRoutes);
-const port = process.env.PORT || 5000;
+const port = 4444;
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
