@@ -3,9 +3,9 @@ const mysql = require("mysql2/promise");
 // MySQL bağlantı havuzunu oluştur
 const pool = mysql.createPool({
   host: "localhost",
-  user: "root",
-  password: "samet123",
-  database: "personnel_tracking_system",
+  user: "",
+  password: "",
+  database: "",
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
