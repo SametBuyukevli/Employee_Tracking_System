@@ -8,6 +8,7 @@ const permissionController = require("../contoller/permissionController");
 const roleController = require("../contoller/roleController");
 const departmentController = require('../contoller/departmentController');
 const serviceController = require('../contoller/serviceController');
+const loginController = require('../contoller/loginController');
 departmentEmployeeController = require('../contoller/departmentEmployees');
 
 
@@ -67,5 +68,13 @@ router.post("/departmentEmployee/add", departmentEmployeeController.postAddPage)
 router.get("/departmentEmployee/edit/:id", departmentEmployeeController.getEditPage);
 router.post("/departmentEmployee/edit/:id", departmentEmployeeController.postEditPage);
 router.get("/departmentEmployee/delete/:id", departmentEmployeeController.deleteDepartment);
+
+router.get("/login", loginController.get_login);
+router.post("/login", loginController.post_login);
+router.get("/register", loginController.get_register);
+router.post("/register", loginController.post_register);
+router.get("/alert", loginController.get_alert);
+
+
 
 module.exports = router;

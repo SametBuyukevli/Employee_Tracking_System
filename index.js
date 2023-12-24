@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const flash = require("connect-flash");
+const bcrypt = require("bcrypt");
 
 const adminRoutes = require('./routes/index');
 
@@ -15,6 +16,8 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
+
+app.use(express.static(__dirname + '/public'));
 
 app.use(cookieParser());
 app.use(
@@ -34,6 +37,7 @@ app.use(flash());
 
 app.use(function(req,res,next){
   res.locals.message = req.flash();
+  res.locals.userName = req.session.userName;
   next();
 })
 
