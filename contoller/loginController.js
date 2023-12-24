@@ -35,10 +35,11 @@ exports.post_register = async function(req, res) {
         const [rows] = await pool.execute(sql, params);
         if(rows.affectedRows > 0){
             req.session.userName = userName;
-            res.redirect("/employees");
+            req.flash("success1", "Kayit oluşturuldu 3 saniye içinde ana sayfaya yönlendiriliyorsunuz...");
+                    res.redirect("/alert");
         } else {
-            req.flash("error", "User registration failed");
-            res.redirect("/register");
+            req.flash("error2", "Kullanıcı kaydı yapılamadı kayıt sayfasına yönlendiriliyorsunuz...");
+            res.redirect("/alert");
         }
     } catch (error) {
         console.log(error);

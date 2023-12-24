@@ -109,7 +109,29 @@
                                     window.location.href = "/login";
                                 }, 3000);
                             </script>
-                            <% } %>
+                            <% }else if (message.success1) { %>
+                                <div id="message" class="alert alert-danger" role="alert">
+                                    <%= message.success1 %>
+                                </div>
+                                <!-- kullanıcı kaydı basarılı bır sekılde yapılmıstır -->
+                                <script>
+                                    setTimeout(function () {
+                                        window.location.href = "/employees";
+                                    }, 3000);
+                                </script>
+                                <% }else if (message.error2) { %>
+                                    <div id="message" class="alert alert-danger" role="alert">
+                                        <%= message.error2 %>
+                                    </div>
+                                    <!-- kullanıcı kaydı basarısız olursa login sayfasina yonlendirir -->
+                                    <script>
+                                        setTimeout(function () {
+                                            window.location.href = "/login";
+                                        }, 3000);
+                                    </script>
+                                    <% } %>
+
+
 
             </div>
         </div>
