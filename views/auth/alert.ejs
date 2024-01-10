@@ -11,14 +11,11 @@
     <style>
         .box {
             display: flex;
-            /* flex-direction: row; */
             position: relative;
             padding: 0 20px;
-            /* Yazının içerisindeki boşlukları ayarlamak için padding değerlerini değiştirdim */
             height: 100%;
             width: 100%;
             max-width: 400px;
-            /* Kutunun maksimum genişliğini belirledim */
             background-color: rgba(255, 220, 220, 0.4);
             border-radius: 30px;
             -webkit-backdrop-filter: blur(15px);
@@ -84,6 +81,8 @@
                     <script>
                         setTimeout(function () {
                             window.location.href = "/employees";
+                            isAuth:req.session.isAuth
+                            console.log("isAuth: ", req.session.isAuth);
                         }, 3000);
                     </script>
 
@@ -130,8 +129,6 @@
                                         }, 3000);
                                     </script>
                                     <% } %>
-
-
 
             </div>
         </div>

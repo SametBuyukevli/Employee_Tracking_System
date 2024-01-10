@@ -57,7 +57,9 @@
                                             <th>Seats</th>
                                             <th>Number Plate</th>
                                             <th>Route</th>
-                                            <th>Process</th>
+                                            <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                                                <th>Process</th>
+                                                <% } %>
                                         </tr>
                                     </thead>
                                     
@@ -71,6 +73,7 @@
                                                 <td><%= service.seats %></td>
                                                 <td><%= service.numberPlate %></td>
                                                 <td><%= service.route %></td>
+                                                <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
                                                 <td>
                                                     <a href="/service/edit/<%= service.id %>" class="btn btn-info btn-sm">
                                                         <i class="fas fa-info-circle"></i> Edit
@@ -79,6 +82,7 @@
                                                         <i class="fas fa-trash"></i> Delete
                                                     </a>
                                                 </td>
+                                                <% } %>
                                             </tr>
                                         <% }) %>
                                  

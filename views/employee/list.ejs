@@ -58,7 +58,9 @@
                                                                 <th>Last Name</th>
                                                                 <th>Phone</th>
                                                                 <th>Email</th>
-                                                                <th>Process</th>
+                                                                <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                                                                    <th>Process</th>
+                                                                    <% } %>
                                                             </tr>
                                                         </thead>
 
@@ -84,16 +86,18 @@
                                                                     <td>
                                                                         <%= employee.email %>
                                                                     </td>
-                                                                    <td>
-                                                                        <a href="/employee/edit/<%= employee.tckn %>"
-                                                                            class="btn btn-info btn-sm">
-                                                                            <i class="fas fa-info-circle"></i> Edit
-                                                                        </a>
-                                                                        <a href="/employee/delete/<%= employee.tckn %>"
-                                                                            class="btn btn-danger btn-sm">
-                                                                            <i class="fas fa-trash"></i> Delete
-                                                                        </a>
-                                                                    </td>
+                                                                    <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                                                                        <td>
+                                                                            <a href="/employee/edit/<%= employee.tckn %>"
+                                                                                class="btn btn-info btn-sm">
+                                                                                <i class="fas fa-info-circle"></i> Edit
+                                                                            </a>
+                                                                            <a href="/employee/delete/<%= employee.tckn %>"
+                                                                                class="btn btn-danger btn-sm">
+                                                                                <i class="fas fa-trash"></i> Delete
+                                                                            </a>
+                                                                        </td>
+                                                                        <% } %>
                                                                 </tr>
                                                                 <% }) %>
 

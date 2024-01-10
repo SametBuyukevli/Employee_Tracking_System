@@ -1,15 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-const employeeController = require("../contoller/employeeController");
-const timelogController = require("../contoller/timelogContoller");
-const paymentController = require("../contoller/paymentController");
-const permissionController = require("../contoller/permissionController");
-const roleController = require("../contoller/roleController");
-const departmentController = require('../contoller/departmentController');
-const serviceController = require('../contoller/serviceController');
-const loginController = require('../contoller/loginController');
-departmentEmployeeController = require('../contoller/departmentEmployees');
+const employeeController = require("../controller/employeeController");
+const timelogController = require("../controller/timelogContoller");
+const paymentController = require("../controller/paymentController");
+const permissionController = require("../controller/permissionController");
+const roleController = require("../controller/roleController");
+const departmentController = require('../controller/departmentController');
+const serviceController = require('../controller/serviceController');
+const loginController = require('../controller/loginController');
+const departmentEmployeeController = require('../controller/departmentEmployees');
+const homepage = require('../controller/homepage');
 
 
 router.get("/employees", employeeController.getIndexPage);
@@ -74,6 +75,11 @@ router.post("/login", loginController.post_login);
 router.get("/register", loginController.get_register);
 router.post("/register", loginController.post_register);
 router.get("/alert", loginController.get_alert);
+router.get("/logout", loginController.get_logout);
+
+router.get("/",homepage.get_home)
+
+
 
 
 

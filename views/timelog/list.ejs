@@ -58,7 +58,9 @@
                                             <th>Last Name</th>
                                             <th>Login Date</th>
                                             <th>Departure Date Time</th>
-                                            <th>Process</th>
+                                            <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                                                <th>Process</th>
+                                                <% } %>
                                         </tr>
                                     </thead>
                                     
@@ -72,6 +74,7 @@
                                                 <td><%= timelog.middleName %></td>
                                                 <td><%= timelog.lastName %></td>
                                                 <td><%= new Date(timelog.loginDateTime).toLocaleDateString('tr-TR', {year: 'numeric',month: 'long',day: 'numeric', hour: "numeric", minute: "numeric"}); %></td>
+                                                <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
                                                 <td><%= timelog.departureDateTime ? new Date(timelog.departureDateTime).toLocaleDateString('tr-TR', {year: 'numeric',month: 'long',day: 'numeric', hour: "numeric", minute: "numeric"}) : '' %></td>                                                <td>
                                                     <a href="/timelog/edit/<%= timelog.id %>" class="btn btn-info btn-sm">
                                                         <i class="fas fa-info-circle"></i> Edit
@@ -80,6 +83,7 @@
                                                         <i class="fas fa-trash"></i> Delete
                                                     </a>
                                                 </td>
+                                                <% } %>
                                             </tr>
                                         <% }) %>
                                        

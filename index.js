@@ -10,6 +10,8 @@ const bcrypt = require("bcrypt");
 
 const adminRoutes = require('./routes/index');
 
+
+
 app.set("view engine", "ejs");
 
 // parse application/x-www-form-urlencoded
@@ -18,11 +20,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use(express.static(__dirname + '/public'));
+app.set("views", path.join(__dirname, "views"));
 
 app.use(cookieParser());
 app.use(
   session({
-    secret: 'dssadqwe123123123',
+    secret: 'secret-key',
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -38,6 +41,7 @@ app.use(flash());
 app.use(function(req,res,next){
   res.locals.message = req.flash();
   res.locals.userName = req.session.userName;
+  res.locals.isAuth = req.session.isAuth || 0;
   next();
 })
 

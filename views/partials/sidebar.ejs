@@ -5,14 +5,14 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">ODEV</div>
+        <div class="sidebar-brand-text mx-3">PTS</div>
     </a>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
 
- 
+
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
@@ -23,8 +23,11 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/employees">Employee List</a>
-                <a class="collapse-item" href="/employee/add">Employee Add</a>
-                <a class="collapse-item" href="/employee/allList">All Employees List</a>
+                <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                    <a class="collapse-item" href="/employee/add">Employee Add</a>
+                    <a class="collapse-item" href="/employee/allList">All Employees List</a>
+                <% } %>
+
             </div>
         </div>
     </li>
@@ -38,7 +41,9 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/timelogs">Time Log List</a>
-                <a class="collapse-item" href="/timelog/add">Time Log Add</a>
+                <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                    <a class="collapse-item" href="/timelog/add">Time Log Add</a>
+                <% } %>
             </div>
         </div>
     </li>
@@ -51,7 +56,9 @@
         <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/payments">Payment List</a>
-                <a class="collapse-item" href="/payment/add">Payment Add</a>
+                <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                    <a class="collapse-item" href="/payment/add">Payment Add</a>
+                <% } %>
             </div>
         </div>
     </li>
@@ -64,7 +71,9 @@
         <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/permissions">Permission List</a>
-                <a class="collapse-item" href="/permission/add">Permission Add</a>
+                <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                    <a class="collapse-item" href="/permission/add">Permission Add</a>
+                <% } %>
             </div>
         </div>
     </li>
@@ -78,7 +87,9 @@
         <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/roles">Role List</a>
-                <a class="collapse-item" href="/role/add">Role Add</a>
+                <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                    <a class="collapse-item" href="/role/add">Role Add</a>
+                <% } %>
             </div>
         </div>
     </li>
@@ -92,7 +103,9 @@
         <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/departments">Department List</a>
-                <a class="collapse-item" href="/department/add">Department Add</a>
+                <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                    <a class="collapse-item" href="/department/add">Department Add</a>
+                <% } %>
             </div>
         </div>
     </li>
@@ -106,7 +119,9 @@
         <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/services">Service List</a>
-                <a class="collapse-item" href="/service/add">Service Add</a>
+                <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                    <a class="collapse-item" href="/service/add">Service Add</a>
+                <% } %>
             </div>
         </div>
     </li>
@@ -120,7 +135,9 @@
         <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="/departmentEmployees">Emp. Dep. Time List</a>
-                <a class="collapse-item" href="/departmentEmployee/add">Emp. Dep. Time Add</a>
+                <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                    <a class="collapse-item" href="/departmentEmployee/add">Emp. Dep. Time Add</a>
+                <% } %>
             </div>
         </div>
     </li>

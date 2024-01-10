@@ -56,7 +56,9 @@
                                             <th>Department</th>
                                             <th>Start Date</th>
                                             <th>End Date</th>
-                                            <th>Process</th>
+                                            <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                                                <th>Process</th>
+                                                <% } %>
                                         </tr>
                                     </thead>
                                     
@@ -69,14 +71,16 @@
                                                 <td><%= employee_department.departmentId%></td>
                                                 <td><%= new Date(employee_department.startDate).toLocaleDateString('tr-TR', {year: 'numeric',month: 'long',day: 'numeric'}); %>
                                                 <td><%= new Date(employee_department.endDate).toLocaleDateString('tr-TR', {year: 'numeric',month: 'long',day: 'numeric'}); %>
-                                                <td>
-                                                    <a href="/departmentEmployee/edit/<%= employee_department.id %>" class="btn btn-info btn-sm">
-                                                        <i class="fas fa-info-circle"></i> Edit
-                                                    </a>
-                                                    <a href="/departmentEmployee/delete/<%= employee_department.id %>" class="btn btn-danger btn-sm">
-                                                        <i class="fas fa-trash"></i> Delete
-                                                    </a>
-                                                </td>
+                                                <% if (typeof isAuth !== 'undefined' && isAuth=="1") { %>
+                                                    <td>
+                                                        <a href="/departmentEmployee/edit/<%= employee_department.id %>" class="btn btn-info btn-sm">
+                                                            <i class="fas fa-info-circle"></i> Edit
+                                                        </a>
+                                                        <a href="/departmentEmployee/delete/<%= employee_department.id %>" class="btn btn-danger btn-sm">
+                                                            <i class="fas fa-trash"></i> Delete
+                                                        </a>
+                                                    </td>
+                                                 <% } %>
                                             </tr>
                                         <% }) %>
                                  
